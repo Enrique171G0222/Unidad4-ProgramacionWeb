@@ -1,0 +1,23 @@
+﻿@model Actividad1_ControlUsuarios.Models.Usuario
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+}
+
+<h3>Inicia Sesion</h3>
+
+<form method="post" action="~/Home/IniciarSesion">
+    <label>Correo electronico</label>
+    <input type="email" asp-for="Correo" required /> <br />
+    <label>Contraseña</label>
+    <input type="password" asp-for="Contrasena" required /> <br />
+    <input type="submit" value="Iniciar Sesión" /> <br />
+    <input type="checkbox" id="recordarUsuario" name="recordar"/>
+    <label for="recordarUsuario" id="recuerda">Recuerdame</label>
+    <p>
+        @Html.ValidationSummary()
+    </p>
+    <a href="~/Home/RegistrarCuenta">¿No tienes una cuenta? Registrate aqui</a>
+    <a href="~/Home/RecuperarContraseña">He olvidado mi contraseña</a>
+</form>

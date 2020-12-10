@@ -1,0 +1,15 @@
+﻿@model Actividad1_ControlUsuarios.Models.Usuario
+@{
+    Layout = "_Layout";
+}
+
+<h3>Confirma la creación de tu cuenta</h3>
+
+<section>
+    <p>Se ha enviado a tu correo un codigo de confirmacion de tu cuenta</p>
+    <form method="post" action="~/Home/ActivarUsuario">
+        <label>Introduce aqui el codigo</label>
+        <input type="number" required name="codigo" /> <br />
+        <input type="submit" value="Activar cuenta" />
+    </form>
+</section>

@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<h3>Unidad 4. Actividad 1</h3>
+
+<section>
+    <p>Usuario: @User.Claims.FirstOrDefault(x => x.Type == "Nombre").Value</p>
+    <a href="~/Home/CambiarContraseña">
+        <input type="button" value="Cambiar contraseña" />
+    </a>
+    <a href="~/Home/CerrarSesion">
+        <input type="button" value="Finalizar sesion" />
+    </a>
+    <a href="javascript:eliminar()">
+        <input type="button" onclick="eliminar()" value="Eliminar cuenta" />
+    </a>
+</section>
+
+<form method="post" action="~/Home/Eliminar">
+    <input type="email" hidden name="correo" value="@User.Claims.FirstOrDefault(x=>x.Type=="Correo electronico").Value" />
+</form>
+
+<script>
+    function eliminar() {
+        if (confirm('Estas a punto de eliminar tu cuenta ¿estas seguro?')) {
+            document.querySelector("form").submit();
+        }
+    }
+</script>

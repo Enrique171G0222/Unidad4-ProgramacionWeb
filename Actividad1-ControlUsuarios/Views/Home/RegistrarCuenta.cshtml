@@ -1,0 +1,25 @@
+﻿@model Actividad1_ControlUsuarios.Models.Usuario
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+}
+
+<h3>Crea una cuenta</h3>
+
+<form method="post" action="~/Home/RegistrarCuenta">
+        <h3>Escribe tus datos</h3>
+        <label>Nombre</label>
+        <input type="text" required asp-for="Nombre" /> <br />
+        <label>Correo electronico</label>
+        <input type="email" required asp-for="Correo" /> <br />
+        <label>Contraseña</label>
+        <input type="password" required asp-for="Contrasena" name="contraseña1" /> <br />
+        <label>Confirme su contraseña</label>
+        <input type="password" required name="contraseña2" />
+        <p>
+            @Html.ValidationSummary()
+        </p>
+        <input type="submit" value="Registrarme" />
+        <a href="~/Home/IniciarSesion">¿Ya te encuentras registrado? inicia sesión</a>
+</form>

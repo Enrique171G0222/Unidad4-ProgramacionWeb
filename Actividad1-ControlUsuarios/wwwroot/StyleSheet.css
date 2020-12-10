@@ -1,0 +1,112 @@
+﻿body {
+    height:100%;
+    width:100%;
+    background-color:darkblue;
+}
+header{
+    margin:auto;
+    padding:15px;
+    width:70%;
+}
+header h1{
+    margin:auto;
+    color:white;
+    padding:5px;
+}
+main{
+  width:100%;
+}
+h3{
+    margin:auto;
+    color:white;
+    padding:5px;
+}
+form{
+    margin:auto;
+    border:1px solid white;
+    width:50%;
+    padding:20px;
+}
+form label{
+    font-size:20px;
+    margin-top:10px;
+    color:white;
+    display:block;
+}
+form a{
+    display:block;
+    color:white;
+    margin:5px;
+}
+form input[type=checkbox]{
+    margin-top:10px;
+    display:block;
+    float:left;
+}
+form input[type=submit]{
+    display:block;
+    width:50%;
+    margin:auto;
+    padding:10px;
+    font-size:medium;
+}
+form input[type=password], input[type=email]{
+    display:block;
+    margin:auto;
+    padding:10px;
+    width:50%;
+}
+form input[type=text]{
+    display:block;
+    margin:auto;
+    padding:10px;
+    width:50%;
+}
+form #recuerda{
+    margin-top:5px;
+    margin-left:25px;
+    display:block;
+}
+div {
+    margin: auto;
+    border: 1px solid white;
+    width: 50%;
+    padding: 20px;
+}
+div input[type=button]{
+    display:block;
+    margin:auto;
+    font-size:medium;
+    padding:10px;
+}
+section {
+    margin: auto;
+    border: 1px solid white;
+    width: 50%;
+    padding: 20px;
+}
+
+    section p {
+        font-size: 20px;
+        margin-top: 10px;
+        color: white;
+        display: block;
+    }
+
+    section a {
+        display: block;
+        color: white;
+        margin: 5px;
+    }
+footer {
+    margin: auto;
+    width: 100%;
+}
+
+    footer h4 {
+        font-size: small;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        padding: 5px;
+    }
