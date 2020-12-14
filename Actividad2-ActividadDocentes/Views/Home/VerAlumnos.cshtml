@@ -1,0 +1,46 @@
+﻿@model Actividad2_ActividadDocentes.Models.Profesor
+@{
+    Layout = "_Layout";
+}
+
+<h3>Alumnos del profesor: @Model.Nombre</h3>
+<table>
+    <caption>
+        <a href="~/Home/AgregarAlumno/@Model.Id">Agregar Alumno al grupo</a>
+    </caption>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>NumControl</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var alum in Model.Alumno)
+        {
+            <tr>
+                <td>@alum.NoControl</td>
+                <td>@alum.Nombre</td>
+                <td>
+                    <a href="~/Home/EditarAlumno/@alum.Id">Editar alumno</a>
+                    <a href="#" onclick="eliminaralumno(@alum.Id)">Eliminar alumno</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="~/Home/IngresoExitoso">
+    <input type="button" value="Regresar a la petsaña de información"/>
+</a>
+
+<form method="post" action="~/Home/ElimiarAlumno">
+    <input type="number" hidden="hidden" name="Id" id="IdAlumno"/>
+</form>
+<script>
+    function eliminaralumno(id) {
+        document.getElementById("IdAlumno").value = id;
+        document.querySelector("form").submit();
+    }
+</script>

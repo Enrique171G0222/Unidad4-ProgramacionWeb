@@ -1,0 +1,131 @@
+﻿body {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+header {
+    margin: auto;
+    padding: 15px;
+    width: 70%;
+}
+
+    header h1 {
+        margin: auto;
+        padding: 5px;
+    }
+
+main {
+    width: 100%;
+}
+
+h3 {
+    margin: auto;
+    padding: 5px;
+}
+
+form {
+    margin: auto;
+    border: 1px solid black;
+    width: 50%;
+    padding: 20px;
+}
+
+    form label {
+        font-size: 20px;
+        margin-top: 10px;
+        display: block;
+    }
+
+    form a {
+        display: block;
+        margin: 5px;
+    }
+    form input[type=submit] {
+        display: block;
+        width: 50%;
+        margin: auto;
+        padding: 10px;
+        font-size: medium;
+    }
+
+    form input[type=password]{
+        display: block;
+        margin: auto;
+        padding: 10px;
+        width: 50%;
+    }
+
+    form input[type=text] {
+        display: block;
+        margin: auto;
+        padding: 10px;
+        width: 50%;
+        margin-top:10px;
+    }
+
+    form input[type=button] {
+        display: block;
+        margin: auto;
+        font-size: medium;
+        padding: 10px;
+    }
+    form #clave {
+        display: block;
+        margin: auto;
+        font-size: medium;
+        padding: 10px;
+    }
+    form p {
+        font-size: 20px;
+        margin-top: 10px;
+        color: black;
+        clear:both;
+    }
+div {
+    margin: auto;
+    border: 1px solid black;
+    width: 50%;
+    padding: 20px;
+}
+
+    div input[type=button] {
+        display: block;
+        margin: auto;
+        font-size: medium;
+        padding: 10px;
+    }
+input[type=button] {
+    display: block;
+    margin: auto;
+    font-size: medium;
+    padding: 10px;
+}
+table {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px auto;
+}
+    table caption a {
+        text-decoration: none;
+        color: black;
+        margin-right: 20px;
+    }
+    table th{
+        padding:10px;
+    }
+    table td{
+        padding:10px;
+    }
+footer {
+    margin: auto;
+    width: 100%;
+}
+
+    footer h3 {
+        font-size: small;
+        font-weight: bold;
+        text-align: center;
+        padding: 5px;
+    }

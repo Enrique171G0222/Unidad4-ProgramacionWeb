@@ -1,0 +1,19 @@
+﻿@model Actividad2_ActividadDocentes.Models.Profesor
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_Layout";
+}
+
+<h3>Editar Profesor</h3>
+<form method="post" action="~/Home/EditarProfesores">
+    <input type="hidden" asp-for="Id" /> <br />
+    <label>Nombre del profesor</label>
+    <input type="text" asp-for="Nombre" required /> <br />
+    <input type="submit" value="Confirmar cambios" />
+    <a href="~/Home/IngresoExitoso">
+        <input type="button" value="Cancelar edicion" />
+    </a>
+</form>
+<p>
+    @Html.ValidationSummary()
+</p>

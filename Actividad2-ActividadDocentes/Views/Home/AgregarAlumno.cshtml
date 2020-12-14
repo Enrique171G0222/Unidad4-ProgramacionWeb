@@ -1,0 +1,19 @@
+﻿@model Actividad2_ActividadDocentes.Models.AlumnoViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_Layout";
+}
+
+<h3>Agregar Alumno</h3>
+<form method="post" action="~/Home/AgregarAlumno">
+    <label>No. Control del alumno</label>
+    <input type="text" asp-for="Alumno.NoControl" required /> <br />
+    <label>Nombre del alumno</label>
+    <input type="text" asp-for="Alumno.Nombre" required /> <br />
+    <label>Clave docente</label>
+    <input type="number" asp-for="Profesor.Clave" readonly="readonly" /> <br />
+    <input type="submit" value="Agregar alumno" /> <br />
+</form>
+<p>
+    @Html.ValidationSummary()
+</p>

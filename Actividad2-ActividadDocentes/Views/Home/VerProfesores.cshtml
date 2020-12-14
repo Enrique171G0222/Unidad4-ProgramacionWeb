@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Actividad2_ActividadDocentes.Models.Profesor>
+@{
+    Layout = "_Layout";
+}
+
+<h3>Lista de profesores</h3>
+<a href="~/Home/AgregarProfesores">Agregar profesor al sistema</a>
+<table>
+    <thead>
+        <tr>
+            <th>Número de control</th>
+            <th>Nombre</th>
+            <th>Estado</th>
+            <th>Grupo</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var prof in Model)
+        {
+        <tr>
+            <td>@prof.Id</td>
+            <td>@prof.Nombre</td>
+            <td href="#" onclick="cambiar(@prof.Id)">@((prof.Activo==1)?"Activo":"Inactivo")</td>
+            <td>
+                <a href="~/Home/VerAlumnos/@prof.Id">Ver lista de alumnos</a>
+            </td>
+            <td>
+                <a href="~/Home/CambiarContraProf/@prof.Id">Cambiar la contraseña del profesor</a>
+            </td>
+            <td>
+                <a href="~/Home/EditarProfesores/@prof.Id">Editar informacion de profesor</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a href="~/Home/IngresoExitoso">
+    <input type="button" value="Regresar a la pestaña de información" />
+</a>
+<form method="post" action="~/Home/DesactivarProfesor">
+    <input type="number" id="IdProf" name="Id" hidden />
+</form>
+<script>
+    function cambiar(id) {
+        document.getElementById("IdProf").value = id;
+        document.querySelector("form").submit();
+    }
+</script>

@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+
+<h3>Pestaña principal</h3>
+@if (User.IsInRole("Director"))
+{
+        <form>
+            <h3>Usuario director: @User.Claims.FirstOrDefault(x => x.Type == "Nombre").Value</h3>
+
+            <a href="~/Home/VerProfesores">
+                <input type="button" value=" Ver lista de profesores" />
+            </a>
+
+            <a href="~/Home/CerrarSesion">
+                <input type="button" value="Cerrar sesion" />
+            </a>
+
+        </form>
+}
+
+@if (User.IsInRole("Profesor"))
+{        <form>
+            <h3>Usuario profesor @User.Claims.FirstOrDefault(x => x.Type == "Nombre").Value</h3>
+
+            <a href="~/Home/VerAlumnos/@(int.Parse(User.Claims.FirstOrDefault(x => x.Type == "Id").Value))">
+                <input type="button" value="Ver lista de alumnos" />
+            </a>
+
+            <a href="~/Home/CerrarSesion">
+                <input type="button" value="Cerrar sesion" />
+            </a>
+
+        </form>
+}

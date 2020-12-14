@@ -1,0 +1,35 @@
+﻿@model Actividad2_ActividadDocentes.Models.AlumnoViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_Layout";
+}
+
+<h3>EditarAlumno</h3>
+<form method="post" action="~/Home/EditarAlumno">
+    <input type="hidden" asp-for="Alumno.Id" /> <br />
+    <label>No. Control del alumno</label>
+    <input type="text" asp-for="Alumno.NoControl" readonly /> <br />
+    <label>Nombre del alumno</label>
+    <input type="text" asp-for="Alumno.Nombre" /> <br />
+    @if (User.IsInRole("Director"))
+    {
+        <label>Grupo al que pertenece:</label>
+        <select asp-for="Alumno.IdProfesor" asp-items="@(new SelectList(Model.Profesores, "Id", "Nombre"))" id="cmdDocente">
+            <option selected="selected" value="">--Selecciona un docente--</option>
+        </select><br />
+    }
+    @if (User.IsInRole("Profesor"))
+    {
+        <label>Clave del profesor del grupo al que pertenece</label>
+        <input type="text" readonly="readonly" asp-for="Profesor.Clave" /> <br />
+        <label>Nombre del profesor</label>
+        <input type="text" readonly="readonly" asp-for="Profesor.Nombre" />
+    }
+    <input type="submit" value="Editar Alumno" /> <br />
+    <a href="~/Home/IngresoExitoso">
+        <input type="button" value="Cancelar edicion" />
+    </a>
+</form>
+<p>
+    @Html.ValidationSummary()
+</p>
